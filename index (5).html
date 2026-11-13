@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hashir ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ background:#080808;
+ color:white;
+ font-family:Georgia,serif;
+ text-align:center;
+ overflow-x:hidden;
+}
+.page{
+ min-height:100vh;
+ display:none;
+ padding:35px 20px;
+ justify-content:center;
+ align-items:center;
+ flex-direction:column;
+ position:relative;
+ overflow:hidden;
+}
+.page.active{display:flex;animation:fade .8s}
+@keyframes fade{
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
+}
+h1{
+ color:#f4cc75;
+ font-size:clamp(30px,8vw,48px);
+ margin:20px 0;
+ text-shadow:0 0 20px #bd842d;
+}
+h2{color:#f4cc75;margin:15px}
+p{
+ max-width:600px;
+ line-height:1.9;
+ font-size:17px;
+ margin:12px auto;
+ color:#eee;
+}
+.gold{color:#f4cc75}
+button{
+ padding:14px 28px;
+ border:1px solid #e8bd69;
+ background:linear-gradient(135deg,#bd842d,#f7df9b);
+ color:#17100a;
+ font-size:16px;
+ font-weight:bold;
+ border-radius:30px;
+ margin:25px 8px;
+ cursor:pointer;
+ box-shadow:0 0 18px #bd842d66;
+}
+button:hover{transform:scale(1.06)}
+.heart{
+ font-size:65px;
+ animation:beat 1s infinite;
+}
+@keyframes beat{
+ 50%{transform:scale(1.2)}
+}
+.card{
+ background:linear-gradient(145deg,#1c1c1c,#111);
+ border:1px solid #b88b43;
+ padding:25px;
+ border-radius:22px;
+ max-width:500px;
+ width:100%;
+ box-shadow:0 0 30px #c49a4530;
+ margin:15px auto;
+}
+.gift{
+ font-size:80px;
+ cursor:pointer;
+ transition:.4s;
+}
+.gift:hover{transform:rotate(10deg) scale(1.2)}
+.hidden{display:none}
+.cake{
+ font-size:95px;
+ animation:float 2s infinite alternate;
+}
+@keyframes float{
+ to{transform:translateY(-15px)}
+}
+.stars{
+ position:fixed;
+ top:-20px;
+ color:#f4cc75;
+ animation:fall linear infinite;
+ pointer-events:none;
+ z-index:5;
+}
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(360deg)}
+}
+.progress{
+ position:fixed;
+ top:0;left:0;
+ height:4px;
+ background:#f4cc75;
+ width:0%;
+ z-index:10;
+ transition:.4s;
+}
+.photo{
+ width:150px;height:150px;
+ border-radius:50%;
+ border:3px solid #e8bd69;
+ background:linear-gradient(135deg,#321c26,#191919);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:65px;
+ margin:20px auto;
+ box-shadow:0 0 25px #bd842d66;
+}
+</style>
+</head>
+
+<body>
+<div class="progress" id="bar"></div>
+
+<!-- STEP 1 -->
+<section class="page active">
+ <div class="heart">❤️</div>
+ <h1>Happy Birthday</h1>
+ <h1>HASHIR</h1>
+ <p>A special day for a very special person!</p>
+ <p class="gold">From Javeria, with lots of duas and love.</p>
+ <button onclick="next()">Open Your Surprise ✨</button>
+</section>
+
+<!-- STEP 2 -->
+<section class="page">
+ <h2>01 — A Special Person</h2>
+ <div class="photo">👑</div>
+ <h1>Dear Hashir!</h1>
+ <p>
+ Some people are not just family, they become friends,
+ happiness and beautiful memories too.
+ You are one of those special people.
+ </p>
+ <button onclick="next()">Next Surprise ❤️</button>
+</section>
+
+<!-- STEP 3 -->
+<section class="page">
+ <h2>02 — Our Bond</h2>
+ <div class="card">
+ <div class="heart">🫶</div>
+ <h1>Cousin by Relation</h1>
+ <h2>Best Friend by Choice!</h2>
+ <p>
+ Not every cousin becomes a best friend,
+ but I'm lucky to have both in one person.
+ Our bond is truly special!
+ </p>
+ </div>
+ <button onclick="next()">Continue 💫</button>
+</section>
+
+<!-- STEP 4 -->
+<section class="page">
+ <h2>03 — A Little Comedy</h2>
+ <h1>Attention Hashir! 😂</h1>
+ <div class="card">
+ <p>
+ Official announcement:
+ Your age has increased,
+ but please don't expect your maturity
+ to increase automatically! 🤣
+ </p>
+ <h2>Stay Crazy, Stay Awesome!</h2>
+ </div>
+ <button onclick="next()">One More 😂</button>
+</section>
+
+<!-- STEP 5 -->
+<section class="page">
+ <h2>04 — Mystery Gift</h2>
+ <h1>Something For You!</h1>
+ <div class="gift" onclick="reveal()">🎁</div>
+ <div id="giftText" class="hidden">
+ <h2>Your Real Gift ❤️</h2>
+ <p>
+ A lifetime of happiness, countless reasons to smile
+ and people who genuinely wish the best for you.
+ May Allah bless you with all of it!
+ </p>
+ </div>
+ <button onclick="next()">Next Surprise 🎀</button>
+</section>
+
+<!-- STEP 6 -->
+<section class="page">
+ <h2>05 — A Heartfelt Letter</h2>
+ <div class="card">
+ <h1>Dear Hashir ❤️</h1>
+ <p>
+ I may not always express it, but you are
+ genuinely an important part of my life.
+ I'm grateful that I have a cousin and a friend
+ like you.
+ Thank you for being part of my beautiful memories.
+ I hope our bond always stays full of laughter,
+ respect and happiness.
+ </p>
+ <h2>Always Stay Blessed!</h2>
+ <p>— Javeria</p>
+ </div>
+ <button onclick="next()">Next 💌</button>
+</section>
+
+<!-- STEP 7 -->
+<section class="page">
+ <h2>06 — My Wishes For You</h2>
+ <h1>7 Beautiful Duas</h1>
+ <div class="card">
+ <p>🤍 May Allah bless you with happiness.</p>
+ <p>✨ May success follow your efforts.</p>
+ <p>🌙 May your life be full of peace.</p>
+ <p>💫 May your dreams come true.</p>
+ <p>🌹 May you always stay healthy.</p>
+ <p>❤️ May you always be surrounded by good people.</p>
+ <p>🤲 May Allah protect you from every difficulty.</p>
+ </div>
+ <button onclick="next()">Next Surprise 🌟</button>
+</section>
+
+<!-- STEP 8 -->
+<section class="page">
+ <h2>07 — Birthday Celebration</h2>
+ <h1>Make A Wish!</h1>
+ <div class="cake">🎂</div>
+ <p class="gold">One more year, countless new opportunities!</p>
+ <p>May this new chapter bring you endless blessings.</p>
+ <button onclick="next()">Light The Celebration 🎆</button>
+</section>
+
+<!-- STEP 9 -->
+<section class="page">
+ <h2>08 — A Promise</h2>
+ <div class="card">
+ <div class="heart">💖</div>
+ <h1>One Special Promise</h1>
+ <p>
+ No matter how busy life gets,
+ I hope we always keep our connection,
+ share silly jokes, create unforgettable memories
+ and remain the same crazy cousin-friends!
+ </p>
+ <h2>Our Bond, Our Memories!</h2>
+ </div>
+ <button onclick="next()">Final Surprise 🎁</button>
+</section>
+
+<!-- STEP 10 -->
+<section class="page">
+ <h2>09 — The Grand Finale</h2>
+ <div class="heart">❤️</div>
+ <h1>Happy Birthday Hashir!</h1>
+ <h2>From Your Javeria</h2>
+ <div class="card">
+ <p>
+ You are not just my cousin,
+ you are one of my favourite people
+ and a wonderful friend.
+ 
+ Keep smiling, keep shining,
+ and never stop being yourself.
+ 
+ May Allah write the most beautiful
+ chapters of your life ahead.
+ </p>
+ <h1>Lots of Duas! 🤍</h1>
+ <p class="gold">Made with love by Javeria ✨</p>
+ </div>
+ <button onclick="fireworks()">Celebrate! 🎆</button>
+ <button onclick="location.reload()">Replay All 10 Steps ↻</button>
+</section>
+
+<script>
+let current=0;
+const pages=document.querySelectorAll('.page');
+
+function next(){
+ pages[current].classList.remove('active');
+ current++;
+ if(current>=pages.length)current=0;
+ pages[current].classList.add('active');
+ document.getElementById('bar').style.width=
+ ((current+1)/pages.length*100)+'%';
+ window.scrollTo(0,0);
+}
+
+function reveal(){
+ document.getElementById('giftText').classList.remove('hidden');
+}
+
+function fireworks(){
+ for(let i=0;i<100;i++){
+  let s=document.createElement('div');
+  s.className='stars';
+  s.innerHTML=['✨','⭐','💛','🎉','❤️'][Math.floor(Math.random()*5)];
+  s.style.left=Math.random()*100+'vw';
+  s.style.animationDuration=(2+Math.random()*4)+'s';
+  s.style.fontSize=(15+Math.random()*20)+'px';
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),6000);
+ }
+ alert('HAPPY BIRTHDAY HASHIR! 🎂❤️');
+}
+
+// Floating stars
+for(let i=0;i<25;i++){
+ let s=document.createElement('div');
+ s.className='stars';
+ s.innerHTML='✦';
+ s.style.left=Math.random()*100+'vw';
+ s.style.animationDuration=(5+Math.random()*8)+'s';
+ s.style.animationDelay=Math.random()*5+'s';
+ document.body.appendChild(s);
+}
+</script>
+</body>
+</html>
